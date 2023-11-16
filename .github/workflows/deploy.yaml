@@ -27,7 +27,13 @@ jobs:
       - name: Checkout content
         env:
           SSH_KEY_FOR_CONTENTS: ${{secrets.SSH_KEY_FOR_CONTENTS}}
-        run: mkdir $HOME/.ssh && echo "$SSH_KEY_FOR_CONTENTS" > $HOME/.ssh/id_ed25519 && chmod 600 $HOME/.ssh/id_ed25519 && git submodule update --init --recursive
+        run: |
+          mkdir $HOME/.ssh 
+          echo "$SSH_KEY_FOR_CONTENTS" > $HOME/.ssh/id_ed25519 
+          chmod 600 $HOME/.ssh/id_ed25519 
+          git submodule foreach git pull origin master
+          git submodule update
+
       - uses: actions/setup-node@v3
         with:
           node-version: 18.14
