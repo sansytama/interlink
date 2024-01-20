@@ -5,7 +5,7 @@ const config: QuartzConfig = {
   configuration: {
     pageTitle: "💀",
     enableSPA: true,
-    enablePopovers: true,
+    enablePopovers: false,
     analytics: null,
     baseUrl: "sansytama.github.io/interlink",
     ignorePatterns: ["private", "templates", ".obsidian", "drafts", "others"],
