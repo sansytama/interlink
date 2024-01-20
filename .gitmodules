@@ -1,4 +1,4 @@
 [submodule "content"]
 	path = content
-	url = git@github.com:sansytama/content
+	url = git@github.com:sansytama/content.git
     branch = master
