@@ -8,7 +8,7 @@ const config: QuartzConfig = {
     enablePopovers: true,
     analytics: null,
     baseUrl: "sansytama.github.io/interlink",
-    ignorePatterns: ["private", "templates", ".obsidian", "drafts"],
+    ignorePatterns: ["private", "templates", ".obsidian", "drafts", "others"],
     defaultDateType: "created",
     theme: {
       typography: {
