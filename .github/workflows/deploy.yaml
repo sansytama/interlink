@@ -21,10 +21,14 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0 # Fetch all history for git info
-          submodules: true
+      - name: Checkout content
+        env:
+          SSH_KEY_FOR_CONTENTS: ${{secrets.SSH_KEY_FOR_CONTENTS}}
+        run: |
+          mkdir $HOME/.ssh 
+          echo "$SSH_KEY_FOR_CONTENTS" > $HOME/.ssh/id_ed25519 
+          chmod 600 $HOME/.ssh/id_ed25519 
+          git submodule update --init --checkout
       - uses: actions/setup-node@v3
         with:
           node-version: 18.14
