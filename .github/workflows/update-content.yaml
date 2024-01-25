@@ -1,0 +1,28 @@
+name: Update content
+
+on:
+  workflow_dispatch: ~
+  schedule:
+    - cron: '0 6 * * *'
+  repository_dispatch:
+    types:
+      - content-update
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  content-update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: fregante/setup-git-user@v2
+      - name: Update remote submodules
+        run: git submodule update --init --remote
+      - name: Commit submodule updates
+        run: |
+          git commit -am "Automatic content update"
+          git push
