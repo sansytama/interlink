@@ -21,7 +21,13 @@ jobs:
           fetch-depth: 0
       - uses: fregante/setup-git-user@v2
       - name: Update remote submodules
-        run: git submodule update --init --remote
+        env:
+          SSH_KEY_FOR_CONTENTS: ${{secrets.SSH_KEY_FOR_CONTENTS}}
+        run: |
+          mkdir $HOME/.ssh 
+          echo "$SSH_KEY_FOR_CONTENTS" > $HOME/.ssh/id_ed25519 
+          chmod 600 $HOME/.ssh/id_ed25519 
+          git submodule update --init --remote
       - name: Commit submodule updates
         run: |
           git commit -am "Automatic content update"
