@@ -7,6 +7,7 @@ const config: QuartzConfig = {
     enableSPA: true,
     enablePopovers: false,
     analytics: null,
+    locale: "en-US",
     baseUrl: "sansytama.github.io/interlink",
     ignorePatterns: ["private", "templates", ".obsidian", "drafts", "others"],
     defaultDateType: "created",
