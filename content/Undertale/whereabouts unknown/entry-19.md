@@ -1,5 +1,5 @@
 ---
-title: Entry 19
+title: "Entry 19: Logic"
 tags:
   - Undertale
   - waterfall
