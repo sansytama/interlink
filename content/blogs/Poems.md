@@ -2,7 +2,6 @@
 title: Poems from a friend
 tags:
   - Blog
-publish: "true"
 ---
 
 Is it?  
