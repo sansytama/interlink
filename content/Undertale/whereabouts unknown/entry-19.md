@@ -7,9 +7,7 @@ tags:
 date: 2024-09-24T19:53:00
 publish: "true"
 ---
-"There's no smoke without fire. 
-
-There's no way to make omelette without breaking a few eggs."
+"There's no smoke without fire."
 
 Wandering about the old question of existence has been a habit of Sans for a while, since his arrival at Snowdon alongside his brother. Much like his habitual arrival every hour at Grillby's for a snack break. Much like his habitual visit to Waterfall, the part of the river where there's no one around.
 
